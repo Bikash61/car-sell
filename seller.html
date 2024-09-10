@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kushal Cruze - Seller Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #0056b3;
+      --secondary-color: #dc3545;
+      --text-color: #333;
+      --background-color: #f8f9fa;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--background-color);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Navbar styles */
+    .navbar {
+      background-color: var(--primary-color);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .navbar-brand img {
+      width: 100px;
+      height: auto;
+    }
+
+    .navbar-links {
+      display: flex;
+    }
+
+    .nav-link {
+      color: var(--white);
+      text-decoration: none;
+      padding: 10px 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      background-color: var(--secondary-color);
+    }
+
+    /* Form styles */
+    .form-container {
+      max-width: 500px;
+      margin: 100px auto;
+      padding: 20px;
+      background-color: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-title {
+      text-align: center;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--primary-color);
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .btn-submit {
+      background-color: var(--secondary-color);
+      color: var(--white);
+      padding: 12px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+
+    .btn-submit:hover {
+      background-color: #c82333;
+    }
+
+    .error-message {
+      color: var(--secondary-color);
+      font-size: 0.9em;
+      margin-top: 5px;
+    }
+
+    /* Footer styles */
+    .footer {
+      background-color: var(--primary-color);
+      color: var(--white);
+      text-align: center;
+      padding: 20px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+
+   <!-- Navigation Bar -->
+   <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/kushal cruze logo.png" alt="Kushal Cruze logo">
+      </a>
+      <div class="navbar-links">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#categories">Car Categories</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <a class="nav-link" href="login.html">Sell</a>
+        <a class="nav-link" href="search.html">Search</a>
+        <a class="nav-link" href="register.html">Register</a>
+      </div>
+    </div>
+  </nav>
+  <nav class="navbar">
+
+    
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/kushal cruze logo.png" alt="Kushal Cruze logo">
+      </a>
+      <div class="navbar-links">
+        <a class="nav-link" href="seller-login.html">Login</a>
+        <a class="nav-link" href="add-car.html">Add Car</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Login Form -->
+  <div class="form-container" id="login-form">
+    <h2 class="form-title">Seller Login</h2>
+    <form id="sellerLoginForm">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" required>
+        <span class="error-message" id="username-error"></span>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required>
+        <span class="error-message" id="password-error"></span>
+      </div>
+      <button type="submit" class="btn-submit">Login</button>
+    </form>
+  </div>
+
+  <!-- Add Car Form -->
+  <div class="form-container" id="add-car-form" style="display: none;">
+    <h2 class="form-title">Add Car</h2>
+    <form id="addCarForm">
+      <div class="form-group">
+        <label for="make">Make</label>
+        <input type="text" id="make" required>
+      </div>
+      <div class="form-group">
+        <label for="model">Model</label>
+        <input type="text" id="model" required>
+      </div>
+      <div class="form-group">
+        <label for="year">Year</label>
+        <input type="number" id="year" required>
+      </div>
+      <div class="form-group">
+        <label for="mileage">Mileage</label>
+        <input type="number" id="mileage" required>
+      </div>
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" id="location" required>
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" id="price" required>
+      </div>
+      <button type="submit" class="btn-submit">Add Car</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Kushal Cruze. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Form validation and submission
+    document.getElementById('sellerLoginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      let isValid = true;
+
+      // Username validation
+      if (!/^[a-zA-Z]+$/.test(username)) {
+        document.getElementById('username-error').textContent = 'Username should only contain alphabets.';
+        isValid = false;
+      } else {
+        document.getElementById('username-error').textContent = '';
+      }
+
+      // Password validation
+      if (!/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[?$#@])[a-zA-Z\d?$#@]{6,10}$/.test(password)) {
+        document.getElementById('password-error').textContent = 'Password should be 6-10 characters long and include alphabets, numbers, and special characters (?, $, #, @).';
+        isValid = false;
+      } else {
+        document.getElementById('password-error').textContent = '';
+      }
+
+      if (isValid) {
+        alert('Login successful!');
+        // Here you would typically send the login data to your server
+      }
+    });
+
+    document.getElementById('addCarForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const fields = ['make', 'model', 'year', 'mileage', 'location', 'price'];
+      let isValid = true;
+
+      fields.forEach(field => {
+        if (!document.getElementById(field).value) {
+          alert(`Please fill in the ${field} field.`);
+          isValid = false;
+        }
+      });
+
+      if (isValid) {
+        alert('Car added successfully!');
+        // Here you would typically send the car data to your server
+      }
+    });
+
+    // Toggle between login and add car forms
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (this.textContent === 'Login') {
+          document.getElementById('login-form').style.display = 'block';
+          document.getElementById('add-car-form').style.display = 'none';
+        } else if (this.textContent === 'Add Car') {
+          document.getElementById('login-form').style.display = 'none';
+          document.getElementById('add-car-form').style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

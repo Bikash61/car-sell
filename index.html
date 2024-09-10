@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kushal Cruze - Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #0056b3; /* Deep Blue */
+      --secondary-color: #dc3545; /* Vibrant Red */
+      --text-color: #333;
+      --background-color: #f8f9fa;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--background-color);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Navbar styles */
+    .navbar {
+      background-color: var(--primary-color);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .navbar-brand img {
+      width: 100px;
+      height: auto;
+    }
+
+    .navbar-links {
+      display: flex;
+    }
+
+    .nav-link {
+      color: var(--white);
+      text-decoration: none;
+      padding: 10px 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      background-color: var(--secondary-color);
+    }
+
+    /* Hero section styles */
+    .hero-section {
+      background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(220, 53, 69, 0.8)), url('images/c1.jpg') center/cover no-repeat;
+      color: var(--white);
+      text-align: center;
+      padding: 150px 20px;
+      margin-top: 60px;
+    }
+
+    .hero-section h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .cta-btn {
+      background-color: var(--secondary-color);
+      color: var(--white);
+      padding: 12px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background-color: #c82333;
+    }
+
+    /* Section styles */
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      color: var(--primary-color);
+    }
+
+    /* About section styles */
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .about-content h2 {
+      margin-bottom: 20px;
+      color: var(--primary-color);
+    }
+
+    .about-content p {
+      margin-bottom: 20px;
+      max-width: 800px;
+    }
+
+    .about-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Car categories styles */
+    .car-categories {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .category {
+      flex-basis: calc(33.333% - 40px);
+      margin: 20px;
+      background-color: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .category:hover {
+      transform: translateY(-10px);
+    }
+
+    .category-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .category h4 {
+      padding: 20px;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+    }
+
+    .category p {
+      padding: 0 20px 20px;
+    }
+
+    /* Contact form styles */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: var(--white);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--primary-color);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .btn-submit {
+      background-color: var(--secondary-color);
+      color: var(--white);
+      padding: 12px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      background-color: #c82333;
+    }
+
+    /* Footer styles */
+    .footer {
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 40px 0;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer-section {
+      flex: 1;
+      margin: 0 20px 20px;
+      min-width: 200px;
+    }
+
+    .footer-section h3 {
+      color: var(--secondary-color);
+      margin-bottom: 15px;
+    }
+
+    .footer-section ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-section a {
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: var(--secondary-color);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-color: var(--white);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 30px;
+      transition: background-color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      background-color: var(--secondary-color);
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .navbar .container {
+        flex-direction: column;
+      }
+
+      .navbar-links {
+        margin-top: 20px;
+      }
+
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+
+      .category {
+        flex-basis: calc(50% - 40px);
+      }
+
+      .footer-section {
+        flex-basis: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .category {
+        flex-basis: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/kushal cruze logo.png" alt="Kushal Cruze logo">
+      </a>
+      <div class="navbar-links">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#categories">Car Categories</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <a class="nav-link" href="seller.html">Seller</a>
+        <a class="nav-link" href="register.html">Register</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <h1>Find Your Dream Car or Sell with Ease</h1>
+    <p>Discover a wide range of cars or list yours for sale. We make car trading seamless and easy.</p>
+    <button class="cta-btn">Get Started</button>
+  </div>
+
+  <!-- About Us Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="about-content">
+        <h2>About Kushal Cruze</h2>
+        <p>We are the leading platform for buying and selling cars online. Whether you are looking to purchase a new vehicle or sell your old one, we provide the tools and services to ensure a smooth experience.</p>
+        <p>With our extensive network and advanced search tools, finding your next car has never been easier. We connect sellers with potential buyers in a matter of clicks.</p>
+        <img src="images/c1.jpg" alt="Car Showroom" class="about-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Car Categories Section -->
+  <section id="categories" class="section">
+    <h2 class="section-title">Explore by Car Categories</h2>
+    <div class="car-categories">
+      <div class="category">
+        <img src="images/c2.jpg" class="category-image" alt="Sedan">
+        <h4>Sedans</h4>
+        <p>Comfortable and stylish sedans for every taste and budget.</p>
+      </div>
+      <div class="category">
+        <img src="images/c3.jpg" class="category-image" alt="SUV">
+        <h4>SUVs</h4>
+        <p>Powerful and spacious SUVs for the adventure seekers.</p>
+      </div>
+      <div class="category">
+        <img src="images/c4.jpg" class="category-image" alt="Sports Car">
+        <h4>Sports Cars</h4>
+        <p>High-performance sports cars for thrill and speed enthusiasts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section id="contact" class="section">
+    <h2 class="section-title">Contact Us</h2>
+    <form class="contact-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Headquarters</h3>
+          <p>Kushal Cruze Tower</p>
+          <p>123 Main Street</p>
+          <p>Sydney 400001</p>
+          <p>Australia</p>
+        </div>
+        <div class="footer-section">
+          <h3>Branch Locations</h3>
+          <ul>
+            <li>Melbourne</li>
+            <li>Sydney</li>
+            <li>Chicago</li>
+            <li>Berlin</li>
+            <li>Toronto</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Phone: +61 413 938 660</p>
+          <p>Email: info@kushalcruze.com</p>
+          <p>Toll-free: 1800-123-4567</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#categories">Car Categories</a></li>
+            <li><a href="login.html">Sell Your Car</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2024 Kushal Cruze. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
